@@ -64,8 +64,11 @@ public class SyncController {
 
     @DeleteMapping("/delete/{employeeId}")
     public ResponseEntity<Void> deleteParticipant(@PathVariable String employeeId) {
-        syncService.deleteParticipant(employeeId);
-        return new ResponseEntity<>(HttpStatus.GONE);
+        if (Objects.nonNull(employeeId) && !employeeId.trim().isEmpty()) {
+            syncService.deleteParticipant(employeeId);
+            return new ResponseEntity<>(HttpStatus.GONE);
+        } else
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @DeleteMapping("/delete")
