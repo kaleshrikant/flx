@@ -1,5 +1,6 @@
 package com.shrikant.controller;
 
+import com.shrikant.dto.ParticipantDTO;
 import com.shrikant.entity.Participant;
 import com.shrikant.service.SyncService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,7 @@ public class SyncController {
     }
 
     @PutMapping("/update/{participant}")
-    public ResponseEntity<Participant> updateParticipant(@RequestBody Participant participant) {
+    public ResponseEntity<Participant> updateParticipant(@RequestBody ParticipantDTO participant) {
         return new ResponseEntity<>(syncService.updateParticipant(participant), HttpStatus.ACCEPTED);
     }
 

@@ -1,5 +1,6 @@
 package com.shrikant.service;
 
+import com.shrikant.dto.ParticipantDTO;
 import com.shrikant.entity.Participant;
 import com.shrikant.repository.SyncRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,15 @@ public class SyncService {
         return syncRepository.findAll();
     }
 
-    public Participant updateParticipant(Participant participant) {
+    public Participant updateParticipant(ParticipantDTO participantDto) {
+        Participant participant = Participant.builder()
+                                                        .name(participantDto.getName())
+                                                        .age(participantDto.getAge())
+                                                        .creditScore(participantDto.getCreditScore())
+                                                        .annualSalary(participantDto.getAnnualSalary())
+                                                        .existingDebt(participantDto.getExistingDebt())
+                                                        .loanAmount(participantDto.getLoanAmount())
+                                                        .build();
         return syncRepository.save(participant);
     }
 
