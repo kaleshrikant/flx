@@ -53,8 +53,13 @@ public class SyncController {
     }
 
     @PutMapping("/update/{participant}")
-    public ResponseEntity<Participant> updateParticipant(@RequestBody ParticipantDTO participant) {
-        return new ResponseEntity<>(syncService.updateParticipant(participant), HttpStatus.ACCEPTED);
+    public ResponseEntity<Participant> updateParticipant(@RequestBody ParticipantDTO participantDto) {
+        Participant participant = syncService.updateParticipant(participantDto);
+
+        if (Objects.nonNull(participant)) {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(participant);
+        } else
+            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
     }
 
     @DeleteMapping("/delete/{employeeId}")
