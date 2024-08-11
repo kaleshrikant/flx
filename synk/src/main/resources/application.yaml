@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: sink-service
+  data:
+    mongodb:
+      database: mongoDBTemplate
+      port: '27017'
+      host: localhost
