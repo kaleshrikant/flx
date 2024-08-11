@@ -3,6 +3,10 @@ spring:
     name: sink-service
   data:
     mongodb:
-      database: mongoDBTemplate
+      username: admin
+      password: admin
       port: '27017'
-      host: localhost
+      database: flx
+      repositories:
+        enabled: 'true'
+      authentication-database: admin
