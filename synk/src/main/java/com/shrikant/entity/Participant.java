@@ -23,4 +23,6 @@ public class Participant {
     private long loanAmount;
 
     private Rate rate;
+
+    private Long offerId;
 }
