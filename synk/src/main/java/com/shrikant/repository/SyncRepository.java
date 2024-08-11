@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SyncRepository extends MongoRepository<Participant, Integer> {
+public interface SyncRepository extends MongoRepository<Participant, String> {
 }
