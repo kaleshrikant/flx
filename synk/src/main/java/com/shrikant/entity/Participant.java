@@ -12,9 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("participant")
 public class Participant {
 
-    @Id
-    private Integer pid;
-
+    private String employeeId;
     private String name;
     private int age;
     private int creditScore;
