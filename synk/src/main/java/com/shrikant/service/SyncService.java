@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,8 +19,8 @@ public class SyncService {
         return syncRepository.save(participant);
     }
 
-    public Participant findParticipant(Integer participantId) {
-        return syncRepository.findById(participantId).get();
+    public Optional<Participant> findParticipant(String employeeId) {
+        return syncRepository.findById(employeeId);
     }
 
     public List<Participant> findAllParticipants() {
@@ -30,8 +31,8 @@ public class SyncService {
         return syncRepository.save(participant);
     }
 
-    public void deleteParticipant(Integer participantId) {
-        syncRepository.deleteById(participantId);
+    public void deleteParticipant(String employeeId) {
+        syncRepository.deleteById(employeeId);
     }
 
     public void deleteAllParticipant() {
