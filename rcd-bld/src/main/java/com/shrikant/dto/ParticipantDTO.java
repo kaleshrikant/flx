@@ -13,6 +13,7 @@ import java.io.Serializable;
 @Builder
 public class ParticipantDTO implements Serializable {
 
+    private String employeeId;
     private String name;
     private int age;
     private String city;

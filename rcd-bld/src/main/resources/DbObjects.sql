@@ -9,8 +9,7 @@ mysql> CREATE TABLE participant (
     ->     employeeId varchar(255) NOT NULL,
     ->     name varchar(255) NOT NULL,
     ->     age int,
-    ->     city varchar(255),
-    ->     PRIMARY KEY (employeeId)
+    ->     city varchar(255)
     -> );
 Query OK, 0 rows affected (0.02 sec)
 
