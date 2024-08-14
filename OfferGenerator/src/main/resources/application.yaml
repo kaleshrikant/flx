@@ -1,1 +1,16 @@
-spring.application.name=mclbs
+spring:
+  application:
+    name: OfferGenerator
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/mclbs
+    username: shrikant
+    password: kale
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        database: postgresql
+        dialect: org.hibernate.dialect.PostgreSQLDialect
