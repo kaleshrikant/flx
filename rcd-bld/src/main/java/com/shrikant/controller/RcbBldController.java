@@ -47,7 +47,7 @@ public class RcbBldController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    @PutMapping("/update/{participant}")
+    @PutMapping("/update")
     public ResponseEntity<Participant> updateParticipant(@RequestBody ParticipantDTO participantDto) {
         Participant participant = rcbBldService.updateParticipant(participantDto);
 
