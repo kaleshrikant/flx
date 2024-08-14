@@ -12,5 +12,5 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        database: postgresql
+        database: mclbs
         dialect: org.hibernate.dialect.PostgreSQLDialect
