@@ -13,3 +13,5 @@ spring:
 
   application:
     name: rcd-bld
+server:
+  port: '9092'
