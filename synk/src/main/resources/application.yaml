@@ -10,3 +10,5 @@ spring:
       repositories:
         enabled: 'true'
       authentication-database: admin
+server:
+  port: '9094'
