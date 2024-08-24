@@ -10,5 +10,8 @@ QFR :
 SYNC :
         PORT : 9094
 
+OFFER-GENERATOR : 
+        PORT : 9095
+
 SERVICE-REGISTRY :
         PORT : 8761
