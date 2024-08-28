@@ -4,7 +4,7 @@
         `PORT : 9091`
 
 ### RCD-BLD :
-        `PORT : 9092`
+        `PORT : 8092`
 
 ### QFR :
         `PORT : 9093`
