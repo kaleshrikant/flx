@@ -1,4 +1,40 @@
 spring:
+  # Kafka main Settings
+  kafka:
+    # Consumer Configuration
+    consumer:
+      enable-auto-commit: true
+      bootstrap-servers: localhost:9092
+      group-id: RCD-BLD_CG
+      auto-offset-reset: earliest
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      max-pollrecords: 2000
+      fetch-min-size: 262144
+      fetch-max-wait: 100
+      heartbeat-interval: 7000
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+        spring.json.value.default.type: com.fasterxml.jackson.databind.JsonNode
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+
+    # producer Configuration
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        acks: all
+        linger.ms: 50 #  the amount of time to wait for additional messages before sending current batch.
+        batch.size: 20000 # The maximum amount of data that can be sent in a single request
+        delivery.timeout.ms: 90100
+        buffer.memory: 67008864 #  if broker is down, it starts accumulating the message batches in buffer memory (D:32MB).
+
+  # datasource Configuration
   datasource:
     url: jdbc:mysql://localhost:3306/flx_rb
     username: shrikant
@@ -14,4 +50,4 @@ spring:
   application:
     name: rcd-bld
 server:
-  port: '9092'
+  port: '8092'
